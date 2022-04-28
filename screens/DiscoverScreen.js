@@ -4,7 +4,7 @@ import {
   Image,
   StyleSheet,
   Text,
-  TextInput,
+  ScrollView,
   TouchableOpacity,
   View,
 } from "react-native";
@@ -55,7 +55,7 @@ const DiscoverScreen = () => {
         style={{ ...styles.subtitle, color: darkTheme ? "white" : "black" }}
       >
         Sources
-      </Text>
+      </Text><ScrollView>
       <View style={styles.sources}>
         {sources.map((s) => (
           <TouchableOpacity
@@ -66,7 +66,7 @@ const DiscoverScreen = () => {
             <Image source={{ uri: s.pic }} style={styles.sourceImage} />
           </TouchableOpacity>
         ))}
-      </View>
+      </View></ScrollView>
     </View>
   );
 };
@@ -75,7 +75,9 @@ export default DiscoverScreen;
 
 const styles = StyleSheet.create({
   discover: {
-    padding: 10,
+    flex: 1,
+    marginLeft: 5,
+    marginRight: 5,
     alignItems: "center",
   },
   subtitle: {
